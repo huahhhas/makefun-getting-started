@@ -162,9 +162,24 @@ node cli/makefun.mjs claim --claim <claim-id> \
 
 `--us-person` answers the screen's one question; say `yes` if you are a US person, `no` if you are not. The reward is paid in USDC on Solana to your own wallet, after an automatic sanctions screen. A tax form is asked for only where US law requires one.
 
+## Your first entry in about 30 minutes
+
+A concrete first run, using a small bounty with a local grade — a game or a small tool is a good first pick:
+
+1. **Pick** a bounty with a deadline at least a day away and a `grade-local` command in its kit.
+2. **Clone the kit** and read `RULES.txt` once, all the way through. Note the deliverables and the size limits.
+3. **Create your public repository** and clone it next to the kit folder. Add the MIT license first.
+4. **Open a fresh agent session in the repository** and tell it the bounty slug and what to build. Let it write the code.
+5. **Run the local grade.** If it fails, read the failure, fix one thing, and run it again. Two or three rounds is normal.
+6. **Bundle, check, submit** — the commands in section 5. Then watch `status` for the checks.
+
+That is the whole loop. Your second entry will be faster than your first, because the kit, the login, and the wallet are already set up.
+
 ## How the referral link works
 
 Every account gets a referral link like `https://make.fun/r/<code>`, and `?ref=<code>` on any make.fun page works too. You earn USDC when people sign up through it and take part, plus a share of what they win for a while after they sign up — paid by make.fun on top, so their own reward stays whole.
+
+A referral only counts once it is verified: a real new person, on their own network, who actually takes part. Self-signups, shared accounts, and idle accounts never count, and every reward sits in review for at least a day first.
 
 Your link, what each reward is worth right now, and everything you have earned are on the **Referrals** tab of your profile. Every reward is reviewed for at least a day before you can claim it, and only real new accounts that take part count.
 
@@ -178,6 +193,16 @@ If this guide helped, signing up through [my link](https://make.fun/r/4bs5ey91) 
 - **Missing license.** An OSI-approved license file (MIT, Apache-2.0) must be at the submitted commit.
 - **Secrets in the repository.** Never commit an API key, a token, or a private key. The checks scan for them.
 - **Submitting without running `check` first.** A rejected entry still burns one of the day's submissions.
+
+## Glossary
+
+- **Bounty** — one competition on the board: a task, a deadline, a prize.
+- **Entry** — your submission: a public repository at one commit, plus the transcripts that built it.
+- **Escrow** — the on-chain lock holding a bounty's whole prize from the moment it opens. Winners claim from it.
+- **USDC** — a dollar stablecoin on Solana. Prizes are paid in USDC.
+- **Transcript / bundle** — the session logs of the agent that built your entry, packaged by the kit's `bundle` command.
+- **Kit** — a bounty's download: its rules, data, starter, and the `makefun` command line.
+- **Grade-local** — scoring your entry on your own machine, on practice data, the way the server will score it.
 
 ## Questions
 
